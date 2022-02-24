@@ -218,7 +218,7 @@ def resnet50_ibn_a(pretrained=False, **kwargs):
                        ibn_cfg=('a', 'a', 'a', None),
                        **kwargs)
     if pretrained:
-        model.load_state_dict(torch.hub.load_state_dict_from_url(model_urls['resnet50_ibn_a']))
+        model.load_state_dict(torch.hub.load_state_dict_from_url(model_urls['resnet50_ibn_a'],map_location=torch.device("cpu")))
     return model
 
 
